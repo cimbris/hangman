@@ -1,0 +1,13 @@
+.main{
+    padding-top: 150px;
+
+    @media(max-width:1070px) {
+        padding: 0;
+    }
+}
+.main__content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
