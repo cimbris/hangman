@@ -1,6 +1,7 @@
 export default class Model{
     constructor(){
-        this.getRandom()
+        this.secretWord = '';
+        
     }
     tasks = new Map(
         [
@@ -17,11 +18,11 @@ export default class Model{
         ]
     )
     getRandom = () => {
-        const arrayTasks = Array.from(this.tasks)
-        let randomTask = Math.floor(Math.random() * arrayTasks.length)
-        const randomCouple = arrayTasks[randomTask]
-        return randomCouple
-    }
+        const arrayTasks = Array.from(this.tasks);
+        let randomTask = Math.floor(Math.random() * arrayTasks.length);
+        const randomCouple = arrayTasks[randomTask];
+        this.secretWord = randomCouple[1];
+        return randomCouple;
 
-    console.log(math);
+    }
 }

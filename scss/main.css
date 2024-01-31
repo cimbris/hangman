@@ -285,6 +285,8 @@ select:-webkit-autofill:focus {
 .question__template {
   display: flex;
   justify-content: center;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #635b5b;

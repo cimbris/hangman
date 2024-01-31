@@ -4,4 +4,5 @@ import View from './view.js';
 const model = new Model();
 const view = new View();
 
-view.renderQuest(model.getRandom())
+view.renderQuest(model.getRandom());
+view.renderSecretWord(model.secretWord);
