@@ -17,12 +17,24 @@ export default class Model{
             ['shortest month of the year' , 'february'],
         ]
     )
+
+    keyboard = [
+        'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'
+    ]
+
     getRandom = () => {
         const arrayTasks = Array.from(this.tasks);
         let randomTask = Math.floor(Math.random() * arrayTasks.length);
         const randomCouple = arrayTasks[randomTask];
         this.secretWord = randomCouple[1];
         return randomCouple;
+    }
 
+    symbolChecker = (symbol) => {
+        this.keyboard.forEach(char => {
+            if (symbol === char){
+                console.log('fs');
+            }
+        })
     }
 }

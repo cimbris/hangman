@@ -322,7 +322,7 @@ select:-webkit-autofill:focus {
   }
 }
 
-.keyboard__item {
+.keyboard__btn {
   padding: 7px 12px;
   border: 1px solid #000;
   border-radius: 10%;
