@@ -5,7 +5,8 @@ export default class View{
     elements = {
         question: document.querySelector('.question__title'),
         template: document.querySelector('.question__template'),
-        keyboard: document.querySelector('.keyboard')
+        keyboard: document.querySelector('.keyboard'),
+        letterItems: null, 
     }
 
     renderQuest = (randomCouple) => {
@@ -30,9 +31,14 @@ export default class View{
         } 
     }
 
-    // 1. значение кнопки
-    // 2.проверить наличие символа в массиве
-
-    
-
+    renderLetter = (arrayIndex, currentChar) => {
+        this.elements.letterItems = document.querySelectorAll('.question__item');
+        for(let i = 0; i < this.elements.letterItems.length; i++){
+            for(let w = 0; w < arrayIndex.length; w++){
+                if(i === arrayIndex[w]){
+                    this.elements.letterItems[i].innerText = currentChar;
+                }
+            }
+        }
+    }
 }

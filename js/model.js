@@ -1,7 +1,8 @@
 export default class Model{
     constructor(){
         this.secretWord = '';
-        
+        this.letterIndex = [];
+        this.currentChar = '';
     }
     tasks = new Map(
         [
@@ -33,8 +34,24 @@ export default class Model{
     symbolChecker = (symbol) => {
         this.keyboard.forEach(char => {
             if (symbol === char){
-                console.log('fs');
+                this.letterChecker(char);
             }
         })
+    }
+
+    letterChecker = (letter) => {
+        this.clearLetterIndex()
+        for(let i = 0; i < this.secretWord.length; i++){
+            if(this.secretWord[i].toLowerCase() === letter){
+                this.letterIndex.push(i);
+                this.currentChar = letter;
+            } 
+        }
+    }
+
+    clearLetterIndex = () =>{
+        if(this.letterIndex.length>0){
+            this.letterIndex.splice(0,this.letterIndex.length)
+        }
     }
 }
