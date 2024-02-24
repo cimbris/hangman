@@ -9,12 +9,22 @@ view.renderQuest(model.getRandom());
 view.renderSecretWord(model.secretWord);
 view.renderKey(model.keyboard)
 
-document.addEventListener('keyup', (event) => {
-    const key = event.key.toLowerCase();
+const getVallueKey = (key) => {
     model.symbolChecker(key);
     if(model.letterIndex.length > 0){
         view.renderLetter(model.letterIndex, model.currentChar)
+    };
+}
+
+document.addEventListener('keyup', (event) => {
+    const key = event.key.toLowerCase();
+    getVallueKey(key);
+})
+
+view.elements.keyboard.addEventListener('click', (event) =>{
+    if(event.target.closest('.keyboard__btn')){
+        const key = event.target.innerText.toLowerCase();
+        getVallueKey(key);
     }
 })
-// функция рендера вызывается каждый раз при нажатии на кнопку, но со старым значением
-// решение: брать данные с конустркутора модели или написать условие для вызова рендера
+
