@@ -14,6 +14,7 @@ const getVallueKey = (key) => {
     if(model.letterIndex.length > 0){
         view.renderLetter(model.letterIndex, model.currentChar)
     };
+    model.increaseCounter(key)
 }
 
 document.addEventListener('keyup', (event) => {

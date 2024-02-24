@@ -3,6 +3,7 @@ export default class Model{
         this.secretWord = '';
         this.letterIndex = [];
         this.currentChar = '';
+        this.counter = 0;
     }
     tasks = new Map(
         [
@@ -52,6 +53,13 @@ export default class Model{
     clearLetterIndex = () =>{
         if(this.letterIndex.length>0){
             this.letterIndex.splice(0,this.letterIndex.length)
+        }
+    }
+
+    increaseCounter = (key) => {
+        if(this.secretWord.indexOf(key) === -1){
+            this.counter++;
+            console.log(this.counter);
         }
     }
 }
