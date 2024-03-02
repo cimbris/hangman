@@ -7,6 +7,7 @@ export default class View{
         template: document.querySelector('.question__template'),
         keyboard: document.querySelector('.keyboard'),
         letterItems: null, 
+        place: document.querySelector('#place')
     }
 
     renderQuest = (randomCouple) => {
@@ -40,5 +41,9 @@ export default class View{
                 }
             }
         }
+    }
+
+    mistakesCounter = (number) => {
+        this.elements.place.innerText = number;
     }
 }

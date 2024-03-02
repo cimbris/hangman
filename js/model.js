@@ -23,6 +23,8 @@ export default class Model{
     keyboard = [
         'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'
     ]
+    
+    usedButtons = []
 
     getRandom = () => {
         const arrayTasks = Array.from(this.tasks);
@@ -34,8 +36,11 @@ export default class Model{
 
     symbolChecker = (symbol) => {
         this.keyboard.forEach(char => {
-            if (symbol === char){
+            if (symbol === char && this.usedButtons.indexOf(symbol) === -1){
+                this.usedButtons.push(symbol);
                 this.letterChecker(char);
+                this.increaseCounter(symbol);
+                console.log(symbol);
             }
         })
     }
@@ -57,9 +62,15 @@ export default class Model{
     }
 
     increaseCounter = (key) => {
-        if(this.secretWord.indexOf(key) === -1){
+        if(this.secretWord.toLowerCase().indexOf(key.toLowerCase()) === -1){
             this.counter++;
-            console.log(this.counter);
         }
     }
+
+
+    
+    // 1.создавать массив нажатых кнопок
+    // 2.проверять при нажатии есть ли буква в массиве нажатых кнопок
+    //  2.1.если кнопки нет в массиве запускать отгадывание
+    // 3.визуально блокировать кнопку на экране
 }

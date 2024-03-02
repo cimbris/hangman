@@ -13,8 +13,8 @@ const getVallueKey = (key) => {
     model.symbolChecker(key);
     if(model.letterIndex.length > 0){
         view.renderLetter(model.letterIndex, model.currentChar)
-    };
-    model.increaseCounter(key)
+    }
+    view.mistakesCounter(model.counter);
 }
 
 document.addEventListener('keyup', (event) => {
