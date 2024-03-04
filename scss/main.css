@@ -326,4 +326,7 @@ select:-webkit-autofill:focus {
   padding: 7px 12px;
   border: 1px solid #000;
   border-radius: 10%;
+}
+.keyboard__btn--pressed {
+  background-color: #635b5b;
 }/*# sourceMappingURL=main.css.map */

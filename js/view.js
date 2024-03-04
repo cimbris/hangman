@@ -7,7 +7,8 @@ export default class View{
         template: document.querySelector('.question__template'),
         keyboard: document.querySelector('.keyboard'),
         letterItems: null, 
-        place: document.querySelector('#place')
+        place: document.querySelector('#place'),
+        usedBtn: null,
     }
 
     renderQuest = (randomCouple) => {
@@ -45,5 +46,15 @@ export default class View{
 
     mistakesCounter = (number) => {
         this.elements.place.innerText = number;
+    }
+
+    marker = (usedButtons) => {
+        this.elements.usedBtn = document.querySelectorAll('.keyboard__btn')
+        for(let i = 0; i< this.elements.usedBtn.length; i++){
+            let valueBtn = this.elements.usedBtn[i].innerText.toLowerCase();
+            if(usedButtons.indexOf(valueBtn) !== -1){
+                this.elements.usedBtn[i].classList.add('keyboard__btn--pressed')
+            }
+        }
     }
 }

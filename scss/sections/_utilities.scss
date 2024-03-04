@@ -73,5 +73,7 @@
     padding: 7px 12px;
     border: 1px solid #000;
     border-radius: 10%;
-
+        &--pressed{
+            background-color: #635b5b;
+        }
 }

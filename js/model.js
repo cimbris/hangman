@@ -40,7 +40,6 @@ export default class Model{
                 this.usedButtons.push(symbol);
                 this.letterChecker(char);
                 this.increaseCounter(symbol);
-                console.log(symbol);
             }
         })
     }
@@ -67,10 +66,6 @@ export default class Model{
         }
     }
 
-
-    
-    // 1.создавать массив нажатых кнопок
-    // 2.проверять при нажатии есть ли буква в массиве нажатых кнопок
-    //  2.1.если кнопки нет в массиве запускать отгадывание
-    // 3.визуально блокировать кнопку на экране
+    // 1.найти кнопку с нужным символом 
+    // 2. повесить класс
 }
