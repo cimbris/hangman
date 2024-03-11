@@ -45,7 +45,7 @@ export default class View{
     }
 
     mistakesCounter = (number) => {
-        this.elements.place.innerText = number;
+        this.elements.place.innerText = number;        
     }
 
     marker = (usedButtons) => {
@@ -56,5 +56,9 @@ export default class View{
                 this.elements.usedBtn[i].classList.add('keyboard__btn--pressed')
             }
         }
+    }
+
+    defPic = () => {
+        console.log('lose');
     }
 }

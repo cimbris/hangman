@@ -8,21 +8,18 @@
 
     @media(max-width:425px) {
         min-width: 320px;
-
     }
 }
-.question {
 
-}
 .question__title {
     font-size: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     @media(max-width:425px) {
         font-size: 30px;
-
     }
 }
+
 .question__template {
     display: flex;
     justify-content: center;
@@ -35,10 +32,7 @@
         font-size: 25px;
     }
 }
-.question__item {
-}
-.wrong-answers {
-}
+
 .wrong-answers__title {
     font-size: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -48,12 +42,7 @@
         font-size: 30px;
     }
 }
-.wrong-answers__counter {
-}
-.wrong-answers__counter--current {
-}
-.wrong-answers__counter--max-vallue {
-}
+
 .keyboard {
     display: flex;
     flex-wrap: wrap;
@@ -64,11 +53,9 @@
 
     @media(max-width:425px) {
         max-width: 100%;
-
     }
 }
-.keyboard__item {
-}
+
 .keyboard__btn {
     padding: 7px 12px;
     border: 1px solid #000;

@@ -4,6 +4,8 @@ export default class Model{
         this.letterIndex = [];
         this.currentChar = '';
         this.counter = 0;
+        this.isDefeat = false;
+
     }
     tasks = new Map(
         [
@@ -61,11 +63,14 @@ export default class Model{
     }
 
     increaseCounter = (key) => {
-        if(this.secretWord.toLowerCase().indexOf(key.toLowerCase()) === -1){
-            this.counter++;
+        if(this.counter < 6){
+            if(this.secretWord.toLowerCase().indexOf(key.toLowerCase()) === -1){
+                this.counter++;
+            }
+            if(this.counter === 6){
+                this.isDefeat = true;
+                // 1. обнулить счетчик, остановить работу счетчика. статус поражения сделать false
+            }
         }
     }
-
-    // 1.найти кнопку с нужным символом 
-    // 2. повесить класс
 }

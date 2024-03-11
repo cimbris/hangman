@@ -15,6 +15,11 @@ const getVallueKey = (key) => {
         view.renderLetter(model.letterIndex, model.currentChar)
     }
     view.mistakesCounter(model.counter);
+
+    if(model.isDefeat){
+        view.defPic()
+    }
+
     view.marker(model.usedButtons);
 }
 
@@ -29,4 +34,5 @@ view.elements.keyboard.addEventListener('click', (event) =>{
         getVallueKey(key);
     }
 })
+
 
