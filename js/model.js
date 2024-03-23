@@ -63,13 +63,12 @@ export default class Model{
     }
 
     increaseCounter = (key) => {
-        if(this.counter < 6){
+        if(this.counter < 6 && this.isDefeat === false){
             if(this.secretWord.toLowerCase().indexOf(key.toLowerCase()) === -1){
                 this.counter++;
             }
             if(this.counter === 6){
                 this.isDefeat = true;
-                // 1. обнулить счетчик, остановить работу счетчика. статус поражения сделать false
             }
         }
     }

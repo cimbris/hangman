@@ -17,7 +17,8 @@ const getVallueKey = (key) => {
     view.mistakesCounter(model.counter);
 
     if(model.isDefeat){
-        view.defPic()
+        view.defPic();
+        model.isDefeat = false;
     }
 
     view.marker(model.usedButtons);
