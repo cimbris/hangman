@@ -1,10 +1,14 @@
 export default class Model{
     constructor(){
         this.secretWord = '';
-        this.letterIndex = [];
         this.currentChar = '';
-        this.counter = 0;
+        this.letterIndex = [];
+        this.guessedLetters = [];
         this.isDefeat = false;
+        this.isVictory = false;
+        this.isPlaying = true;
+        this.counter = 0;
+
 
     }
     tasks = new Map(
@@ -37,22 +41,35 @@ export default class Model{
     }
 
     symbolChecker = (symbol) => {
-        this.keyboard.forEach(char => {
-            if (symbol === char && this.usedButtons.indexOf(symbol) === -1){
-                this.usedButtons.push(symbol);
-                this.letterChecker(char);
-                this.increaseCounter(symbol);
-            }
-        })
+        if(this.isPlaying){
+            this.keyboard.forEach(char => {
+                if (symbol === char && this.usedButtons.indexOf(symbol) === -1){
+                    this.usedButtons.push(symbol);
+                    this.letterChecker(char);
+                    this.increaseCounter(symbol);
+                }
+            })
+        }
     }
 
     letterChecker = (letter) => {
         this.clearLetterIndex()
         for(let i = 0; i < this.secretWord.length; i++){
             if(this.secretWord[i].toLowerCase() === letter){
+                this.guessedLetters.push(i);
                 this.letterIndex.push(i);
                 this.currentChar = letter;
-            } 
+            }
+        }
+        this.victoryCheck();
+    }
+
+    victoryCheck = () => {
+        // this.guessedLetters.length === this.secretWord.length ? 
+        // this.isVictory = true : this.isVictory = false;
+        if(this.guessedLetters.length === this.secretWord.length){
+            this.isVictory = true;
+            this.isPlaying = false;
         }
     }
 
@@ -69,7 +86,10 @@ export default class Model{
             }
             if(this.counter === 6){
                 this.isDefeat = true;
+                this.isPlaying = false;
             }
         }
     }
 }
+// остановить игру после флаговой перeменной isPlaying
+// если ты проиграл или выйграл перeменная должна стать false

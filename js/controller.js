@@ -16,11 +16,15 @@ const getVallueKey = (key) => {
     }
     view.mistakesCounter(model.counter);
 
-    if(model.isDefeat){
-        view.defPic();
-        model.isDefeat = false;
-    }
-
+        if(model.isDefeat){
+            view.resultPic();
+            model.isDefeat = false;
+        }
+    
+        if(model.isVictory){
+            view.vicPic();
+            model.isVictory = false;
+        }
     view.marker(model.usedButtons);
 }
 

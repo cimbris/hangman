@@ -58,7 +58,10 @@ export default class View{
         }
     }
 
-    defPic = () => {
+    resultPic = () => {
         console.log('lose');
+    }
+    vicPic = () => {
+        console.log('victory');
     }
 }
