@@ -65,8 +65,6 @@ export default class Model{
     }
 
     victoryCheck = () => {
-        // this.guessedLetters.length === this.secretWord.length ? 
-        // this.isVictory = true : this.isVictory = false;
         if(this.guessedLetters.length === this.secretWord.length){
             this.isVictory = true;
             this.isPlaying = false;
@@ -91,5 +89,3 @@ export default class Model{
         }
     }
 }
-// остановить игру после флаговой перeменной isPlaying
-// если ты проиграл или выйграл перeменная должна стать false

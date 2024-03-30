@@ -17,12 +17,12 @@ const getVallueKey = (key) => {
     view.mistakesCounter(model.counter);
 
         if(model.isDefeat){
-            view.resultPic();
+            view.resultPic(false);
             model.isDefeat = false;
         }
     
         if(model.isVictory){
-            view.vicPic();
+            view.resultPic(true);
             model.isVictory = false;
         }
     view.marker(model.usedButtons);

@@ -58,10 +58,21 @@ export default class View{
         }
     }
 
-    resultPic = () => {
-        console.log('lose');
-    }
-    vicPic = () => {
-        console.log('victory');
+    resultPic = (status) => {
+        let resultTitle;
+        let resultImg;
+        status ? resultTitle = 'you won' : resultTitle = 'you lost';
+        status ?  resultImg = './img/pics/win_pic.jpg' : resultImg = './img/pics/viselica.png';
+        const result =
+        `
+        <section class="result">
+                <p class="result__title">${resultTitle}</p>
+                <div class="result__pic">
+                    <img src="${resultImg}" alt="">
+                </div>
+                <button class="replay-btn">play again</button>
+            </section>
+        `
+        document.body.insertAdjacentHTML('beforeend', result);
     }
 }
