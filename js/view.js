@@ -75,4 +75,17 @@ export default class View{
         `
         document.body.insertAdjacentHTML('beforeend', result);
     }
+
+    renderLoser(objPic){
+        console.log(objPic);
+        const canvas = document.getElementById("viselica");
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            const img = new Image();
+                img.onload = function(){
+                    ctx.drawImage(img, objPic.xPos, objPic.yPos, objPic.width, objPic.height)
+                }
+                img.src = `./img/pics/${objPic.name}.svg`;
+        }
+    }
 }

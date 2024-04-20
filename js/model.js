@@ -8,9 +8,8 @@ export default class Model{
         this.isVictory = false;
         this.isPlaying = true;
         this.counter = 0;
-
-
     }
+
     tasks = new Map(
         [
             ['capital of Italy', 'Rome'],
@@ -31,6 +30,51 @@ export default class Model{
     ]
     
     usedButtons = []
+
+    loserParts = [
+        {
+            name: 'head',
+            xPos: 220,
+            yPos: 170,
+            width: 50,
+            height: 50,
+        },
+        {
+            name: 'body',
+            xPos: 200,
+            yPos: 205,
+            width: 70,
+            height: 50,
+        },
+        {
+            name: 'right_hand',
+            xPos: 263,
+            yPos: 205,
+            width: 40,
+            height: 40,
+        },
+        {
+            name: 'left_hand',
+            xPos: 180,
+            yPos: 205,
+            width: 60,
+            height: 40,
+        },
+        {
+            name: 'right_leg',
+            xPos: 200,
+            yPos: 250,
+            width: 40,
+            height: 50,
+        },
+        {
+            name: 'left_leg',
+            xPos: 230,
+            yPos: 250,
+            width: 40,
+            height: 50,
+        }
+]
 
     getRandom = () => {
         const arrayTasks = Array.from(this.tasks);
@@ -81,6 +125,7 @@ export default class Model{
         if(this.counter < 6 && this.isDefeat === false){
             if(this.secretWord.toLowerCase().indexOf(key.toLowerCase()) === -1){
                 this.counter++;
+
             }
             if(this.counter === 6){
                 this.isDefeat = true;
