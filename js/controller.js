@@ -4,7 +4,6 @@ import View from './view.js';
 const model = new Model();
 const view = new View();
 
-
 view.renderQuest(model.getRandom());
 view.renderSecretWord(model.secretWord);
 view.renderKey(model.keyboard)
@@ -13,6 +12,7 @@ const getVallueKey = (key) => {
     model.symbolChecker(key);
     if(model.letterIndex.length > 0){
         view.renderLetter(model.letterIndex, model.currentChar)
+        // view.player(model.sounds.hit)
     }
     view.mistakesCounter(model.counter);
 
@@ -23,11 +23,13 @@ const getVallueKey = (key) => {
     if(model.isDefeat){
         view.resultPic(false);
         model.isDefeat = false;
+        view.player(model.sounds.lose)
     }
 
     if(model.isVictory){
         view.resultPic(true);
         model.isVictory = false;
+        view.player(model.sounds.win)
     }
     view.marker(model.usedButtons);
 }
@@ -43,5 +45,7 @@ view.elements.keyboard.addEventListener('click', (event) =>{
         getVallueKey(key);
     }
 })
+
+
 
 

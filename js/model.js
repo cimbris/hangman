@@ -74,7 +74,15 @@ export default class Model{
             width: 40,
             height: 50,
         }
-]
+    ]
+
+    sounds = {
+        click: 'click',
+        hit: 'hit',
+        lose: 'lose',
+        miss: 'miss',
+        win: 'win',
+    }
 
     getRandom = () => {
         const arrayTasks = Array.from(this.tasks);
@@ -106,6 +114,8 @@ export default class Model{
             }
         }
         this.victoryCheck();
+
+        // передать в контроллер команду для проигрывания звука попадания
     }
 
     victoryCheck = () => {
@@ -125,6 +135,7 @@ export default class Model{
         if(this.counter < 6 && this.isDefeat === false){
             if(this.secretWord.toLowerCase().indexOf(key.toLowerCase()) === -1){
                 this.counter++;
+                // передать в контроллер команду для проигрывания звука мисса
 
             }
             if(this.counter === 6){
@@ -133,4 +144,6 @@ export default class Model{
             }
         }
     }
+
+    
 }

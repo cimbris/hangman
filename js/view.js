@@ -77,7 +77,6 @@ export default class View{
     }
 
     renderLoser(objPic){
-        console.log(objPic);
         const canvas = document.getElementById("viselica");
         if (canvas.getContext) {
             const ctx = canvas.getContext("2d");
@@ -87,5 +86,12 @@ export default class View{
                 }
                 img.src = `./img/pics/${objPic.name}.svg`;
         }
+    }
+
+    player(sound){
+        const audio = new Audio();
+        audio.src = `../sounds/${sound}.mp3`;
+        audio.volume = 0.1;
+        audio.play();
     }
 }
