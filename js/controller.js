@@ -12,8 +12,8 @@ const getVallueKey = (key) => {
     model.symbolChecker(key);
     if(model.letterIndex.length > 0){
         view.renderLetter(model.letterIndex, model.currentChar)
-        // view.player(model.sounds.hit)
     }
+    view.player(model.currentSound)
     view.mistakesCounter(model.counter);
 
     if(model.counter > 0){

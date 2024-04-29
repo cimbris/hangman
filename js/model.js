@@ -8,6 +8,7 @@ export default class Model{
         this.isVictory = false;
         this.isPlaying = true;
         this.counter = 0;
+        this.currentSound = null;
     }
 
     tasks = new Map(
@@ -110,12 +111,11 @@ export default class Model{
             if(this.secretWord[i].toLowerCase() === letter){
                 this.guessedLetters.push(i);
                 this.letterIndex.push(i);
+                this.currentSound = this.sounds.hit;
                 this.currentChar = letter;
             }
         }
         this.victoryCheck();
-
-        // передать в контроллер команду для проигрывания звука попадания
     }
 
     victoryCheck = () => {
@@ -135,8 +135,7 @@ export default class Model{
         if(this.counter < 6 && this.isDefeat === false){
             if(this.secretWord.toLowerCase().indexOf(key.toLowerCase()) === -1){
                 this.counter++;
-                // передать в контроллер команду для проигрывания звука мисса
-
+                this.currentSound = this.sounds.miss;
             }
             if(this.counter === 6){
                 this.isDefeat = true;

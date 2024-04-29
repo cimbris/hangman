@@ -93,5 +93,8 @@ export default class View{
         audio.src = `../sounds/${sound}.mp3`;
         audio.volume = 0.1;
         audio.play();
+        // if(("loadeddata", (sound))){
+        //     console.log('123');
+        // }
     }
 }
