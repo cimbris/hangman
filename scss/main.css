@@ -287,10 +287,16 @@ select:-webkit-autofill:focus {
 }
 
 .viselica {
-  background-image: url(../../img/pics/viselica.png);
+  background-image: url(../img/pics/viselica.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media (max-width: 540px) {
+  .viselica {
+    width: 400px;
+    height: 500px;
+  }
 }
 
 .utilits {
