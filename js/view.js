@@ -70,7 +70,7 @@ export default class View{
                 <div class="result__pic">
                     <img src="${resultImg}" alt="">
                 </div>
-                <button class="replay-btn">play again</button>
+                <button class="replay-btn" id="restart">play again</button>
             </section>
         `
         document.body.insertAdjacentHTML('beforeend', result);
@@ -97,4 +97,37 @@ export default class View{
         //     console.log('123');
         // }
     }
+
+    restart(){
+        this.elements.template.innerHTML = ''
+    }
+
+    clearKeyboard(){
+        const allButtons = document.querySelectorAll('.keyboard__btn--pressed');
+        allButtons.forEach (button => {
+            button.classList.remove('keyboard__btn--pressed')
+        });
+    }
+
+    clearSecretWord(){
+        const usedSpaces = document.querySelectorAll('.question__item');
+        usedSpaces.forEach(item => {
+            item.remove();
+        })
+    }
+
+    clearCanvas(){
+        const canvas = document.getElementById("viselica");
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width , canvas.height)
+        }
+    }
 }
+
+// запустить перерендер вопроса +
+// удалить шаблон, запустить перерендер +
+// рендер счетчика
+// удалить класс нажатой кнопки +
+// очистить канвас
+// удалить окно реплея +

@@ -74,7 +74,7 @@ export default class Model{
             yPos: 250,
             width: 40,
             height: 50,
-        }
+        },
     ]
 
     sounds = {
@@ -144,5 +144,19 @@ export default class Model{
         }
     }
 
-    
+    restart = () => {
+        this.letterIndex = [];
+        this.guessedLetters = [];
+        this.isDefeat = false;
+        this.isVictory = false;
+        this.isPlaying = true;
+        this.counter = 0;
+        this.currentSound = null;
+        this.usedButtons = []
+
+
+        // this.getRandom();
+        this.clearLetterIndex();
+    }
 }
+// обнулить переменные , запустить рандомайзер запустить clearLetterIndex

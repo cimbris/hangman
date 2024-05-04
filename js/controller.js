@@ -6,7 +6,7 @@ const view = new View();
 
 view.renderQuest(model.getRandom());
 view.renderSecretWord(model.secretWord);
-view.renderKey(model.keyboard)
+view.renderKey(model.keyboard);
 
 const getVallueKey = (key) => {
     model.symbolChecker(key);
@@ -24,6 +24,18 @@ const getVallueKey = (key) => {
         view.resultPic(false);
         model.isDefeat = false;
         view.player(model.sounds.lose)
+
+        const restartBtn = document.querySelector('#restart');
+        restartBtn.addEventListener('click', () => {
+            model.restart();
+            view.renderQuest(model.getRandom());
+            view.clearKeyboard();
+            view.clearSecretWord();
+            view.renderSecretWord(model.secretWord);
+            const okno = document.querySelector('.result').remove();
+            view.mistakesCounter(model.counter);
+            view.clearCanvas();
+        })
     }
 
     if(model.isVictory){
