@@ -89,13 +89,11 @@ export default class View{
     }
 
     player(sound){
-        const audio = new Audio();
+        const audio = document.querySelector('#audio')
+        // const audio = new Audio();
         audio.src = `../sounds/${sound}.mp3`;
         audio.volume = 0.1;
         audio.play();
-        // if(("loadeddata", (sound))){
-        //     console.log('123');
-        // }
     }
 
     restart(){
