@@ -27,14 +27,7 @@ const getVallueKey = (key) => {
 
         const restartBtn = document.querySelector('#restart');
         restartBtn.addEventListener('click', () => {
-            model.restart();
-            view.renderQuest(model.getRandom());
-            view.clearKeyboard();
-            view.clearSecretWord();
-            view.renderSecretWord(model.secretWord);
-            const okno = document.querySelector('.result').remove();
-            view.mistakesCounter(model.counter);
-            view.clearCanvas();
+            restart()
         })
     }
 
@@ -42,6 +35,11 @@ const getVallueKey = (key) => {
         view.resultPic(true);
         model.isVictory = false;
         view.player(model.sounds.win)
+        
+        const restartBtn = document.querySelector('#restart');
+        restartBtn.addEventListener('click', () => {
+            restart()
+        })
     }
     view.marker(model.usedButtons);
 }
@@ -58,6 +56,16 @@ view.elements.keyboard.addEventListener('click', (event) =>{
     }
 })
 
+const restart = () => {
+    model.restart();
+    view.renderQuest(model.getRandom());
+    view.clearKeyboard();
+    view.clearSecretWord();
+    view.renderSecretWord(model.secretWord);
+    const okno = document.querySelector('.result').remove();
+    view.mistakesCounter(model.counter);
+    view.clearCanvas();
+}
 
 
 
