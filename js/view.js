@@ -94,7 +94,7 @@ export default class View{
         }
         // const audio = document.querySelector('#audio')
         const audio = new Audio();
-        audio.src = `../sounds/${sound}.mp3`;
+        audio.src = `./sounds/${sound}.mp3`;
         // audio.src = `../sounds/click.mp3`;
         audio.volume = 0.1;
         audio.play();
