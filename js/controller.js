@@ -13,7 +13,7 @@ const getVallueKey = (key) => {
     if(model.letterIndex.length > 0){
         view.renderLetter(model.letterIndex, model.currentChar)
     }
-    // view.player(model.currentSound)
+    view.player(model.currentSound)
     view.mistakesCounter(model.counter);
 
     if(model.counter > 0){
