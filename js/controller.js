@@ -13,7 +13,7 @@ const getVallueKey = (key) => {
     if(model.letterIndex.length > 0){
         view.renderLetter(model.letterIndex, model.currentChar)
     }
-    view.player(model.currentSound)
+    // view.player(model.currentSound)
     view.mistakesCounter(model.counter);
 
     if(model.counter > 0){
@@ -21,9 +21,9 @@ const getVallueKey = (key) => {
     }
 
     if(model.isDefeat){
+        view.player(model.sounds.lose)
         view.resultPic(false);
         model.isDefeat = false;
-        view.player(model.sounds.lose)
 
         const restartBtn = document.querySelector('#restart');
         restartBtn.addEventListener('click', () => {
@@ -32,9 +32,9 @@ const getVallueKey = (key) => {
     }
 
     if(model.isVictory){
+        view.player(model.sounds.win)
         view.resultPic(true);
         model.isVictory = false;
-        view.player(model.sounds.win)
         
         const restartBtn = document.querySelector('#restart');
         restartBtn.addEventListener('click', () => {
